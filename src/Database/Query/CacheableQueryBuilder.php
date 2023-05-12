@@ -291,7 +291,7 @@ class CacheableQueryBuilder extends Builder
      *
      * @return $this
      */
-    public function withoutCache(): static
+    public function withoutCache()
     {
         $this->enabled = false;
 
@@ -303,7 +303,7 @@ class CacheableQueryBuilder extends Builder
      *
      * @return $this
      */
-    public function withLogging(): static
+    public function withLogging()
     {
         $this->logEnabled = true;
 
@@ -316,7 +316,7 @@ class CacheableQueryBuilder extends Builder
      * @param int $ttl
      * @return $this
      */
-    public function withTtl(int $ttl): static
+    public function withTtl(int $ttl)
     {
         $this->ttl = $ttl;
 
