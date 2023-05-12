@@ -249,7 +249,7 @@ class CacheableQueryBuilder extends Builder
         $sql = $this->toSql();
         $bindings = $this->getBindings();
         if (! empty($bindings)) {
-            $bindings = self::join($this->getBindings(), '_');
+            $bindings = $this->join2($this->getBindings(), '_');
 
             return $sql . '_' . $bindings;
         }
@@ -257,7 +257,7 @@ class CacheableQueryBuilder extends Builder
         return $sql;
     }
 
-    protected static function join($array, $glue, $finalGlue = '')
+    protected function join2($array, $glue, $finalGlue = '')
     {
         if ($finalGlue === '') {
             return implode($glue, $array);
