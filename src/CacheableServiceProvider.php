@@ -17,7 +17,7 @@ class CacheableServiceProvider extends PackageServiceProvider
      * @param Package $package
      * @return void
      */
-    public function configurePackage(Package $package)
+    public function configurePackage(Package $package) : void
     {
         $package->name('laravel-cacheable-model')->hasConfigFile('cacheable');
     }
