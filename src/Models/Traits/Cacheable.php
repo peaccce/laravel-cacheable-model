@@ -29,7 +29,7 @@ trait Cacheable
     /**
      * @return array
      */
-    public function getCacheableProperties(): array
+    public function getCacheableProperties()
     {
         return [
             'ttl' => config('cacheable.ttl', 300),

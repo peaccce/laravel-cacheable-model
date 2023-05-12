@@ -157,7 +157,7 @@ class CacheableQueryBuilder extends Builder
      *
      * @return string[]
      */
-    protected function getIdentifiableModelClasses(mixed $value = null): array
+    protected function getIdentifiableModelClasses($value = null)
     {
         $retVals = [$this->modelClass];
         if ($value) {
@@ -177,7 +177,7 @@ class CacheableQueryBuilder extends Builder
      * @param array|null $wheres
      * @return mixed
      */
-    protected function getIdentifiableValue(array $wheres = null): mixed
+    protected function getIdentifiableValue(array $wheres = null)
     {
         $wheres = $wheres ?? $this->wheres;
         foreach ($wheres as $where) {
@@ -198,7 +198,7 @@ class CacheableQueryBuilder extends Builder
      * @param array|null $wheres
      * @return bool
      */
-    protected function isIdentifiableQuery(array $wheres = null): bool
+    protected function isIdentifiableQuery(array $wheres = null)
     {
         return $this->getIdentifiableValue($wheres) !== null;
     }
@@ -209,7 +209,7 @@ class CacheableQueryBuilder extends Builder
      * @param mixed|null $identifier
      * @return bool
      */
-    public function flushCache(mixed $identifier = null): bool
+    public function flushCache($identifier = null): bool
     {
         if (! $this->enabled) {
             return false;
@@ -261,7 +261,7 @@ class CacheableQueryBuilder extends Builder
      * @param string|null $modelClass
      * @return string
      */
-    protected function getModelCacheKey(string $modelClass = null): string
+    protected function getModelCacheKey(string $modelClass = null)
     {
         return $this->prefix . '_' . ($modelClass ?? $this->modelClass);
     }
